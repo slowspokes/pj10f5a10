@@ -1,0 +1,34 @@
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuració d'un Arxiu docker-compose.yml</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { max-width: 400px;}
+        label, input { display: block; margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+    <h2>Configuració d'un Arxiu docker-compose.yml</h2>
+    <form action="app1.php" method="POST">
+        <h3>Servidor de l'aplicació</h3>
+        <label>Nom de l'aplicacio:<input type="text" name="app_name" required></label>
+        <label>Imatge de l'aplicació:<input type="text" name="app_image" required></label>
+        <label>HOSTNAME:<input type="text" name="app_hostname" required></label>
+    
+        <h3>Servidor de distribució de càrrega</h3>
+        <label>Nom del Servidor:<input type="text" name="loadbalancer_name" required></label>
+        <label>Imatge del Servidor:<input type="text" name="loadbalancer_image" required></label>
+        <label>Nom del contenidor creat:<input type="text" name="loadbalancer_container" required></label>
+    
+        <h3>Xarxes</h3>
+        <label>Nom de la xarxa:<input type="text" name="network_name" required></label>
+        <label>Identificador de la xarxa:<input type="text" name="network_id" required></label>
+    
+        <h3>Opcions Addicionals</h3>
+        <label><input type="checkbox" name="show_nginx_conf"> Mostrar nginx.conf</label>
+
+        <button type="submit">Generar Configuració</button>
+    </form>
+</body>
+</html>

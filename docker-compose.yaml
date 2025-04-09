@@ -1,0 +1,27 @@
+services:
+  sWebPj10:
+    image: php:8.3-apache
+    build: .
+    expose:
+      - "80"
+    volumes:
+      - ./codi/app1.html:/var/www/html/index.php
+      - ./codi/:/var/www/html/
+    networks:
+      - xPj9f5fb
+  sDc:
+    image: nginx:latest
+    container_name: cNginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - sWebPj10
+    ports:
+      - "8000:8000"
+    networks:
+      - xPj9f5fb
+
+networks:
+  xPj9f5fb:
+    name: pj9f5fb
+    driver: bridge
